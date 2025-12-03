@@ -6,11 +6,11 @@
 /*   By: bwilson <bwilson@student.42Berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 13:02:07 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/03 13:02:43 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/03 14:54:01 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, int n)
+int	ft_strncmp(unsigned char *s1, unsigned char *s2, int n)
 {
 	int	i;
 
