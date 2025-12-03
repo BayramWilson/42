@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bwilson <bwilson@student.42Berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/30 09:24:39 by bwilson           #+#    #+#             */
-/*   Updated: 2025/11/30 09:52:07 by bwilson          ###   ########.fr       */
+/*   Created: 2025/12/02 10:05:40 by bwilson           #+#    #+#             */
+/*   Updated: 2025/12/03 13:26:50 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_bzero(char *str, int amt)
+/*
+void	*ft_memmove(void *dest, void *src, int n)
 {
-    int i;
-    i = 0;
-    while(amt > 0)
-    {
-        str[i] = '\0';
-        i++;
-        amt--;
-    }
+	int		i;
+	char	*cdest;
+	char	*csrc;
+
+	i = 0;
+	cdest = (char *)dest;
+	csrc = (char *)src;
+	while (csrc[i])
+		i++;
+	while (i > 0)
+	{
+		cdest[i] = csrc[i];
+		i--;
+	}
+	return (dest);
 }
-
-// #include <stdio.h>
-// int main(void)
-// {
-//     char str[50] = "Work Hard Play Hard";
-//     int startbyte = 11;
-//     int amt = 4;
-
-//     printf("Before bzero: %s\n", str);
-//     ft_bzero(str + 5, amt);
-//     printf("After bzero: %s\n", str);
-// }
-
+ */

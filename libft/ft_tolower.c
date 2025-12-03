@@ -1,19 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
+/*   By: bwilson <bwilson@student.42Berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 23:41:33 by bwilson           #+#    #+#             */
-/*   Updated: 2025/11/28 23:42:47 by bwilson          ###   ########.fr       */
+/*   Created: 2025/12/02 12:45:19 by bwilson           #+#    #+#             */
+/*   Updated: 2025/12/03 13:27:37 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(char x)
+void	ft_tolower(char x)
 {
-    if(x >= 0 && x <= 127) 
-    return 1;
-    else
-    return 0;
+	x = x + 32;
 }

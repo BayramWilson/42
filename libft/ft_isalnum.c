@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/29 01:04:30 by bwilson           #+#    #+#             */
-/*   Updated: 2025/11/29 01:06:40 by bwilson          ###   ########.fr       */
+/*   Created: 2025/11/28 14:23:46 by bwilson           #+#    #+#             */
+/*   Updated: 2025/11/28 23:38:40 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char * x)
+int	ft_isalnum(char x)
 {
-    int     i;
-
-    i = 0;
-    while(x[i] != '\0')
-    i++;
-    return i;
+	if ((x >= 'a' && x <= 'z') || (x >= 'A' && x <= 'Z') || (x >= '0'
+			&& x <= '9'))
+		return (1);
+	else
+		return (0);
 }
+
+// #include <stdio.h>
+// int main(void)
+// {
+//     char x = '8';
+
+//     printf("%i", ft_isalnum(x));
+// }

@@ -1,16 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bwilson <bwilson@student.42Berlin.de>      +#+  +:+       +#+        */
+/*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/02 12:45:19 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/02 12:45:30 by bwilson          ###   ########.fr       */
+/*   Created: 2025/11/28 12:28:21 by bwilson           #+#    #+#             */
+/*   Updated: 2025/11/29 02:31:48 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char ft_tolower(char x)
+int	ft_isalpha(char x)
 {
-    x = x + 32;
+	if ((x >= 'a' && x <= 'z') || (x >= 'A' && x <= 'Z'))
+		return (1);
+	else
+		return (0);
 }
+// #include <stdio.h>
+// int main(void)
+// {
+//     char x = ' ';
+
+//     printf("%i", ft_isalpha(x));
+// }

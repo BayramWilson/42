@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 12:28:21 by bwilson           #+#    #+#             */
-/*   Updated: 2025/11/29 02:31:48 by bwilson          ###   ########.fr       */
+/*   Created: 2025/11/28 12:56:09 by bwilson           #+#    #+#             */
+/*   Updated: 2025/11/28 14:23:13 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(char x)
+int	ft_isdigit(char x)
 {
-    if((x >= 'a' && x <= 'z') 
-    || (x >= 'A' && x <= 'Z'))
-    return 1;
-    else
-    return 0;
+	if (x >= '0' && x <= '9')
+		return (1);
+	else
+		return (0);
 }
+
 // #include <stdio.h>
 // int main(void)
 // {
-//     char x = ' ';
-
-//     printf("%i", ft_isalpha(x));
+//     char x = '0';
+//     char y = '9';
+//     char z = 'a';
+//     printf("%d", ft_isdigit(x));
+//     printf("%d", ft_isdigit(y));
+//     printf("%d", ft_isdigit(z));
 // }

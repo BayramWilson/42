@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 14:23:46 by bwilson           #+#    #+#             */
-/*   Updated: 2025/11/28 23:38:40 by bwilson          ###   ########.fr       */
+/*   Created: 2025/11/29 01:12:43 by bwilson           #+#    #+#             */
+/*   Updated: 2025/12/03 13:03:50 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(char x)
+void	ft_memset(char *str, char repl, int amt)
 {
-    if((x >= 'a' && x <= 'z') 
-    || (x >= 'A' && x <= 'Z')
-    || (x >= '0' && x <= '9'))
-    return 1;
-    else
-    return 0;
+	int	i;
+
+	i = 0;
+	while (amt > 0)
+	{
+		str[i] = repl;
+		i++;
+		amt--;
+	}
 }
+/*
+#include <stdio.h>
 
-// #include <stdio.h>
-// int main(void)
-// {
-//     char x = '8';
+int	main(void)
+{
+	char str[50] = "Welcome to Tutorialspoint";
+	char repl = '#';
+	int amt = 8;
 
-//     printf("%i", ft_isalnum(x));
-// }
+	printf("Before memset: %s\n", str);
+	ft_memset(str, repl, amt);
+	printf("After memset: %s\n", str);
+}*/

@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
+/*   By: bwilson <bwilson@student.42Berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 23:43:10 by bwilson           #+#    #+#             */
-/*   Updated: 2025/11/29 01:03:40 by bwilson          ###   ########.fr       */
+/*   Created: 2025/11/28 23:41:33 by bwilson           #+#    #+#             */
+/*   Updated: 2025/12/03 13:24:18 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int x)
+int	ft_isascii(int x)
 {
-    if(x >= 32 && x <= 126) 
-    return 1;
-    else
-    return 0;
+	if (x >= 0 && x <= 127)
+		return (1);
+	else
+		return (0);
 }

@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bwilson <bwilson@student.42Berlin.de>      +#+  +:+       +#+        */
+/*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/02 10:05:40 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/02 10:21:42 by bwilson          ###   ########.fr       */
+/*   Created: 2025/11/28 23:43:10 by bwilson           #+#    #+#             */
+/*   Updated: 2025/11/29 01:03:40 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *memmove(void *dest, void *src, int n)
+int	ft_isprint(int x)
 {
-    int i;
-    i = 0;
-    char *cdest = (char *)dest;
-    char *csrc = (char *) src;
-    while(csrc[i])
-    i++;
-    while(i > 0)
-    {
-        cdest[i] = csrc[i];
-        i--;
-    }
-    return dest;
+	if (x >= 32 && x <= 126)
+		return (1);
+	else
+		return (0);
 }
