@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
+/*   By: bwilson <bwilson@student.42Berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 01:04:30 by bwilson           #+#    #+#             */
-/*   Updated: 2025/11/29 01:06:40 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/08 12:40:10 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *x)
+#include <stddef.h>
+
+size_t	ft_strlen(const char *x)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (x[i] != '\0')
