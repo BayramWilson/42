@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
+/*   By: bwilson <bwilson@student.42Berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 14:23:46 by bwilson           #+#    #+#             */
-/*   Updated: 2025/11/28 23:38:40 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/08 14:24:26 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,3 @@ int	ft_isalnum(char x)
 	else
 		return (0);
 }
-
-// #include <stdio.h>
-// int main(void)
-// {
-//     char x = '8';
-
-//     printf("%i", ft_isalnum(x));
-// }

@@ -6,7 +6,7 @@
 /*   By: bwilson <bwilson@student.42Berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 19:58:17 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/04 14:15:56 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/08 14:24:33 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,3 @@ int	ft_atoi(char *str)
 	}
 	return (0);
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
-
-int	main(void) {
-  char str[] = "-323a";
-  int amount = ft_atoi(str);
-  printf("%d\n", amount);
-}
-*/

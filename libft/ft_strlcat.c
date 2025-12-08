@@ -6,7 +6,7 @@
 /*   By: bwilson <bwilson@student.42Berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 14:35:12 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/08 12:42:27 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/08 14:23:29 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,3 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 	dest[i] = '\0';
 	return (ldest + lsrc);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-
-int	main(void)
-{
-	char	dest[20] = "hallo";
-	char	src[6] = " Welt";
-	int		result;
-
-	result = ft_strlcat(dest, src, 3);
-	printf("%s\n%d", dest, result);
-}
-*/

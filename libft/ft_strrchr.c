@@ -6,7 +6,7 @@
 /*   By: bwilson <bwilson@student.42Berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 12:50:17 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/08 13:18:38 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/08 14:23:09 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,3 @@ char	*ft_strrchr(char *str, char sym)
 		return (&str[i]);
 	return (temp);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	x[11] = "hallo welt";
-
-	printf("%d", ft_strrchr(x, 'l'));
-}*/
