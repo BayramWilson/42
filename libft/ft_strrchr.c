@@ -6,24 +6,29 @@
 /*   By: bwilson <bwilson@student.42Berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 12:50:17 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/03 13:05:55 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/08 13:18:38 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strrchr(char *str, char sym)
+#include <stddef.h>
+
+char	*ft_strrchr(char *str, char sym)
 {
-	int	i;
-	int	temp;
+	int		i;
+	char	*temp;
 
 	i = 0;
+	temp = NULL;
 	while (str[i])
 	{
 		if (str[i] == sym)
 		{
-			temp = i;
+			temp = &str[i];
 		}
 		i++;
 	}
+	if (sym == '\0')
+		return (&str[i]);
 	return (temp);
 }
 /*

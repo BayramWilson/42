@@ -6,7 +6,7 @@
 /*   By: bwilson <bwilson@student.42Berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 14:00:00 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/08 12:46:32 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/08 13:14:11 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		ft_tolower(int c);
 size_t	ft_strlen(const char *x);
 int		ft_strncmp(char *s1, char *s2, int n);
 char	*ft_strchr(const char *s, int c);
-char	*ft_strrchr(const char *s, int c);
+char    *ft_strrchr(char *str, char sym);
 char	*ft_strnstr(const char *haystack, const char *needle, int len);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t  ft_strlcat(char *dest, const char *src, size_t n);
