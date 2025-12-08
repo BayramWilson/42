@@ -6,7 +6,7 @@
 /*   By: bwilson <bwilson@student.42Berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 14:00:00 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/08 13:14:11 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/08 15:19:58 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
+void    *ft_calloc(size_t count, size_t size);
 
 /* Number conversion */
 int		ft_atoi(const char *str);
