@@ -6,7 +6,7 @@
 /*   By: bwilson <bwilson@student.42Berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 14:00:00 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/09 12:15:14 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/09 12:28:21 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ char    *ft_strdup(const char *s1);
 
 char *ft_substr(char const *s, unsigned int start, size_t len);
 char *ft_strjoin(char const *s1, char const *s2);
+char *ft_strtrim(char const *s1, char const *set);
+
 
 
 /* Memory functions */
