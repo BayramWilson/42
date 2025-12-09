@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
+/*   By: bwilson <bwilson@student.42Berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 14:00:00 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/08 20:19:17 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/09 12:15:14 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n);
 char    *ft_strdup(const char *s1);
 
 char *ft_substr(char const *s, unsigned int start, size_t len);
+char *ft_strjoin(char const *s1, char const *s2);
 
 
 /* Memory functions */
