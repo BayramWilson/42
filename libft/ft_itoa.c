@@ -1,53 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 12:28:09 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/09 17:27:57 by bwilson          ###   ########.fr       */
+/*   Created: 2025/12/10 17:13:30 by bwilson           #+#    #+#             */
+/*   Updated: 2025/12/10 20:11:37 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stddef.h>
+#include <stdlib.h>
 
-int	ft_ispartof(char x, const char *set)
+char	*ft_itoa(int n)
 {
-	int	i;
+	long nb;
+	int is_negative;
+	size_t i;
+	char *result;
+	long temp;
 
-	i = 0;
-	while (set[i])
+	nb = (long)n;
+	temp = nb;
+	is_negative = 0;
+	i = 1;
+	if (nb < 0)
 	{
-		if (set[i] == x)
-			return (1);
+		nb = nb * (-1);
+		temp = temp * (-1);
+		is_negative = 1;
 		i++;
 	}
-	return (0);
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	int		start;
-	char	*result;
-	int		end;
-	int		i;
-
-	start = 0;
-	end = ft_strlen(s1) - 1;
-	i = 0;
-	while (ft_ispartof(s1[start], set))
-		start++;
-	while (ft_ispartof(s1[end], set))
-		end--;
-	result = malloc((end - start + 2));
-	while (start <= end)
+	while ((temp / 10) > 0)
 	{
-		result[i] = s1[start];
-		start++;
+		temp = temp / 10;
 		i++;
 	}
+	result = malloc(i + 1);
+	if (n == 0)
+		result[0] = '0';
 	result[i] = '\0';
+	while (nb > 0)
+	{
+		result[i - 1] = '0' + (nb % 10);
+		nb = nb / 10;
+		i--;
+	}
+	if (is_negative)
+		result[0] = '-';
+
 	return (result);
 }
