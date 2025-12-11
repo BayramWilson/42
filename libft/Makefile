@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+         #
+#    By: bwilson <bwilson@student.42Berlin.de>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/09 17:27:46 by bwilson           #+#    #+#              #
-#    Updated: 2025/12/10 17:10:40 by bwilson          ###   ########.fr        #
+#    Updated: 2025/12/11 12:13:37 by bwilson          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ ARFLAGS = rcs
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

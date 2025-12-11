@@ -3,52 +3,53 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
+/*   By: bwilson <bwilson@student.42Berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 17:13:30 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/10 20:11:37 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/11 12:09:49 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
 
-char	*ft_itoa(int n)
+size_t	count_digits(long nb)
 {
-	long nb;
-	int is_negative;
-	size_t i;
-	char *result;
-	long temp;
+	size_t	i;
 
-	nb = (long)n;
-	temp = nb;
-	is_negative = 0;
 	i = 1;
 	if (nb < 0)
+		nb = -nb;
+	while (nb >= 10)
 	{
-		nb = nb * (-1);
-		temp = temp * (-1);
-		is_negative = 1;
+		nb /= 10;
 		i++;
 	}
-	while ((temp / 10) > 0)
-	{
-		temp = temp / 10;
-		i++;
-	}
-	result = malloc(i + 1);
-	if (n == 0)
+	return (i);
+}
+
+char	*ft_itoa(int n)
+{
+	long	nb;
+	size_t	len;
+	char	*result;
+
+	nb = n;
+	len = count_digits(nb) + (nb < 0);
+	result = malloc(len + 1);
+	if (!result)
+		return (NULL);
+	result[len] = '\0';
+	if (nb == 0)
 		result[0] = '0';
-	result[i] = '\0';
+	if (nb < 0)
+		result[0] = '-';
+	if (nb < 0)
+		nb = -nb;
 	while (nb > 0)
 	{
-		result[i - 1] = '0' + (nb % 10);
-		nb = nb / 10;
-		i--;
+		result[--len] = '0' + (nb % 10);
+		nb /= 10;
 	}
-	if (is_negative)
-		result[0] = '-';
-
 	return (result);
 }
