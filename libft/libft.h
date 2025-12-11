@@ -6,17 +6,14 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 14:00:00 by bwilson           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2025/12/11 19:18:47 by bwilson          ###   ########.fr       */
-=======
-/*   Updated: 2025/12/11 22:17:58 by bwilson          ###   ########.fr       */
->>>>>>> origin/main
+/*   Updated: 2025/12/11 22:37:27 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
 
