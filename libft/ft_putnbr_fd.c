@@ -15,7 +15,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	int	    i;
+	int		i;
 	char	*s;
 
 	i = 0;
@@ -26,4 +26,3 @@ void	ft_putnbr_fd(int n, int fd)
 		i++;
 	}
 }
-
