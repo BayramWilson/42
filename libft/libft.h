@@ -6,7 +6,7 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 14:00:00 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/12 15:05:01 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/15 12:24:46 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,8 @@ void				*ft_calloc(size_t count, size_t size);
 /* Number conversion */
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
+
+/* List Conversion */
+t_list *ft_lstnew(void *content);
 
 #endif
