@@ -6,7 +6,7 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 14:00:00 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/15 12:28:38 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/15 12:42:42 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
 
 /* List Conversion */
-t_list *ft_lstnew(void *content);
-void ft_lstadd_front(t_list **lst, t_list *new);
-
+t_list				*ft_lstnew(void *content);
+void				ft_lstadd_front(t_list **lst, t_list *new);
+int					ft_lstsize(t_list *lst);
 
 #endif
