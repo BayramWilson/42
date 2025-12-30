@@ -6,11 +6,11 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 14:22:06 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/09 17:28:38 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/27 15:56:32 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

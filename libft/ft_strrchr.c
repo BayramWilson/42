@@ -6,28 +6,24 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 12:50:17 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/09 17:28:02 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/27 15:33:45 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-char	*ft_strrchr(char *str, char sym)
+char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
-	char	*temp;
+	char	*last;
 
-	i = 0;
-	temp = NULL;
-	while (str[i])
+	last = NULL;
+	while (*s)
 	{
-		if (str[i] == sym)
-		{
-			temp = &str[i];
-		}
-		i++;
+		if (*(unsigned char *)s == (unsigned char)c)
+			last = ((char *)s);
+		s++;
 	}
-	if (sym == '\0')
-		return (&str[i]);
-	return (temp);
+	if (*(unsigned char *)s == (unsigned char)c)
+		return ((char *)s);
+	return (last);
 }

@@ -6,22 +6,22 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 14:50:51 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/09 17:28:55 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/27 15:56:31 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_bzero(void *x, int n)
-{
-	int		i;
-	char	*cx;
+#include "libft.h"
 
-	cx = (char *)x;
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	i;
+	char	*cs;
+
+	cs = (char *)s;
 	i = 0;
-	while (n > 0)
+	while (i < n)
 	{
-		cx[i] = '\0';
+		cs[i] = '\0';
 		i++;
-		n--;
 	}
-	return (x);
 }

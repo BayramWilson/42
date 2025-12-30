@@ -6,7 +6,7 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 16:51:03 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/15 17:23:15 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/28 17:34:38 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*result;
 	unsigned int	i;
 
+	if (!s || !f)
+		return (NULL);
 	i = 0;
 	result = malloc(ft_strlen(s) + 1);
 	while (s[i])

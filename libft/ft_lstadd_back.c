@@ -6,7 +6,7 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 13:17:55 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/15 13:36:49 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/28 17:16:11 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
+	if (!new || !lst)
+		return ;
 	if (*lst != NULL)
 	{
 		last = ft_lstlast(*lst);

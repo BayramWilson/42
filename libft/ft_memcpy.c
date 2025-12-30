@@ -6,24 +6,25 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 09:52:43 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/09 17:28:33 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/27 15:56:31 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, void *src, int n)
+#include "libft.h"
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	int		i;
-	char	*cdest;
+	size_t	i;
+	char	*cdst;
 	char	*csrc;
 
 	i = 0;
-	cdest = (char *)dest;
+	cdst = (char *)dst;
 	csrc = (char *)src;
-	while (n > 0)
+	while (i < n)
 	{
-		cdest[i] = csrc[i];
+		cdst[i] = csrc[i];
 		i++;
-		n--;
 	}
-	return (dest);
+	return (dst);
 }

@@ -6,11 +6,11 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 01:04:30 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/09 17:28:10 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/27 15:54:58 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *x)
 {

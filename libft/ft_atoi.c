@@ -6,26 +6,20 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 19:58:17 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/09 17:28:57 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/27 15:56:31 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char x)
-{
-	if (x >= '0' && x <= '9')
-		return (1);
-	else
-		return (0);
-}
+#include "libft.h"
 
-int	ft_isspace(char x)
+static int	ft_isspace(char x)
 {
 	if ((x >= '\t' && x <= '\r') || x == ' ')
 		return (1);
 	return (0);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	result;

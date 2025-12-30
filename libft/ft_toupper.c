@@ -6,12 +6,15 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 12:29:00 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/09 17:27:49 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/27 15:56:31 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_toupper(char x)
+#include "libft.h"
+
+int	ft_toupper(int c)
 {
-	if (x >= 'a' && x <= 'z')
-		x = x - 32;
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }

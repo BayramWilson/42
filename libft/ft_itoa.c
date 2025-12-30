@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bwilson <bwilson@student.42Berlin.de>      +#+  +:+       +#+        */
+/*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 17:13:30 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/11 12:09:49 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/27 16:17:17 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
+#include "libft.h"
 
-size_t	count_digits(long nb)
+static size_t	count_digits(long nb)
 {
 	size_t	i;
 

@@ -6,12 +6,15 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 12:45:19 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/09 17:27:52 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/27 15:56:31 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_tolower(char x)
+#include "libft.h"
+
+int	ft_tolower(int c)
 {
-	if (x >= 'A' && x <= 'Z')
-		x = x + 32;
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }

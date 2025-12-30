@@ -6,13 +6,15 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 12:56:09 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/09 17:28:43 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/27 15:54:58 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char x)
+#include "libft.h"
+
+int	ft_isdigit(int c)
 {
-	if (x >= '0' && x <= '9')
+	if (c >= '0' && c <= '9')
 		return (1);
 	else
 		return (0);

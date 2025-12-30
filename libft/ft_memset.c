@@ -6,22 +6,23 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 01:12:43 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/09 17:28:28 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/27 15:56:31 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *str, int repl, int amt)
+#include "libft.h"
+
+void	*ft_memset(void *b, int c, size_t len)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*cstr;
 
 	i = 0;
-	cstr = (unsigned char *)str;
-	while (amt > 0)
+	cstr = (unsigned char *)b;
+	while (i < len)
 	{
-		cstr[i] = repl;
+		cstr[i] = (unsigned char)c;
 		i++;
-		amt--;
 	}
-	return (str);
+	return (b);
 }

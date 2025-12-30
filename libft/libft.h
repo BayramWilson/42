@@ -6,7 +6,7 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 14:00:00 by bwilson           #+#    #+#             */
-/*   Updated: 2025/12/15 17:50:05 by bwilson          ###   ########.fr       */
+/*   Updated: 2025/12/27 16:14:14 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ int					ft_tolower(int c);
 
 /* String functions */
 size_t				ft_strlen(const char *x);
-int					ft_strncmp(char *s1, char *s2, int n);
+int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strchr(const char *s, int c);
-char				*ft_strrchr(char *str, char sym);
+char				*ft_strrchr(const char *s, int c);
 char				*ft_strnstr(const char *haystack, const char *needle,
-						int len);
+						size_t len);
 size_t				ft_strlcpy(char *dest, const char *src, size_t size);
 size_t				ft_strlcat(char *dest, const char *src, size_t n);
 char				*ft_strdup(const char *s1);
