@@ -1,0 +1,51 @@
+Born2beRoot
+
+- make ssh 4242 (now 4343)	YES
+- configue ufw (must be active when  launch vm) YES
+- implement strong password policy 
+
+	- pw expires every 30d YES
+	- min days before modify pw is 2d YES
+	- warning message 7d before pw expires YES
+	- "sudo chage -M 30 -m 2 -W 7 bwilson" CODE
+	- pw:
+		- 10 char YES
+		- 1 upper, 1 lower, 1 number YES
+		- not contain more than 3 consecutive similar chars YES
+		- not include name of user YES
+		- NOT FOR ROOT: must have 7 chars that are not part of former pw YES
+
+
+- make bwilson belongs to bwilson42(host) YES
+- sudo group config: 	YES
+	- auth using sudo limited to 3 attempts of incorrect pw YES
+	- error message of my choice wrong pw YES
+	- inputs and outputs of sudo are archived in: "/var/log/sudo/" (Defaults logfile="/var/log/sudo/sudo.log") YES
+	- enable "TTY" mode 	YES
+	- restrict paths using sudo (i.e.: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin) YES
+	
+	
+- create a script called monitoring.sh in bash
+	- runs at server startup and every 10 minutes (wall provides more information)
+	- no error must be visible
+	- information to display:
+		• The architecture of your operating system and its kernel version.
+		• The number of physical processors.
+		• The number of virtual processors.
+		• The current available RAM on your server and its utilization rate as a percentage.
+		• The current available storage on your server and its utilization rate as a percentage.
+		• The current utilization rate of your processors as a percentage.
+		• The date and time of the last reboot.
+		• Whether LVM is active or not.
+		• The number of active connections.
+		• The number of users using the server.
+		• The IPv4 address of your server and its MAC (Media Access Control) address.
+		• The number of commands executed with the sudo program.
+	- must be explained by me and needs to be able to interrupt it. (cron provides more information)
+
+
+
+new todos:
+	change strong password
+	make script for reboot too
+	

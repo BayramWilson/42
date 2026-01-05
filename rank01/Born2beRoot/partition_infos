@@ -1,0 +1,42 @@
+Partition explanation
+
+- sda:
+	- main virtual disk
+- sda1 /boot:
+	- boot partition unencrypted
+	- contains GRUB(bootloader), kernel(core of OS) and intramfs (initial RAM filesystem)
+- sda 5
+	- encrypted partition
+	|
+	|___LVMGroup
+			- flexible volume managamednt
+			- resizes logical vol. 
+			|
+			|___root
+				- contains OS
+			|
+			|___swap
+				- virtual mem when ram is full
+			|
+			|___home
+				- sep user data from system
+			|
+			|___var/log
+				- prevents logs from filling / and crashing system
+			|
+			|___tmp
+				- temporary files created by apps
+			|
+			|___srv
+				- service data ( web or appdata
+				 
+“I use an unencrypted /boot, then a LUKS-encrypted partition containing LVM.
+Inside LVM, I split system, logs, user data, and temporary files into separate logical
+volumes to improve security, stability, and maintainability.”
+
+command list: 
+
+lsblk
+cryptsetup status sda5_crypt
+lvdisplay
+vgdisplay
