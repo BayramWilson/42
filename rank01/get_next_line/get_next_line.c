@@ -6,7 +6,7 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 20:09:38 by bwilson           #+#    #+#             */
-/*   Updated: 2026/01/05 17:07:30 by bwilson          ###   ########.fr       */
+/*   Updated: 2026/01/06 18:07:06 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,16 +62,56 @@ int main(void)
     //get_next_line;
 
         /* FUNCTIONAL */ 
-    int fd, sz;
-	char* c = (char*)malloc(100);
-    char buffer[1024];
-	fd = open("test.txt", O_RDONLY);
-	if (fd < 0) {
-		perror("r1");
-		exit(1);
-	}
-    sz = read(fd, c, sizeof(buffer));
-    printf("%s\n", c);
-    free(c);
-	return 0;
+    // int fd, sz;
+	// char* c = (char*)malloc(100);
+    // char buffer[1024];
+    // char dummy;
+	// fd = open("test.txt", O_RDONLY);
+	// if (fd < 0) {
+	// 	perror("r1");
+	// 	exit(1);
+	// }
+    // sz = read(fd, &dummy, 10);
+    // sz = read(fd, buffer, sizeof(buffer));
+    
+    // printf("%s\n", buffer);
+    // free(c);
+	// return 0;
+
+    int fd;
+    int stash;
+    static char buffer[256];
+    int i = 0;
+    char line[256];
+    int j = 0;
+    fd = open("test.txt", O_RDONLY);
+    stash = 1;
+    while((stash != 0))
+    {
+        stash = read(fd, buffer, 5);
+        if(stash == 0)
+        {
+            break;
+        }
+        //buffer = line[i];
+        while(buffer[j])
+        {
+            //printf("%d\n", j);
+            if(buffer[j] == '\n')
+            {
+                i++;
+            }
+            j++;
+        }
+        j = 0;
+        printf("%s\n", buffer);
+    }
+    //printf("buffer contains: %s\n", line);
+    printf("i = %i", i);
+
+    // int fd;
+    // int stash;
+    // char buffer[42];
+
+    // while(stash = read(fd, buffer, BUFFER_SIZE))
 }

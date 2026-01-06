@@ -6,7 +6,7 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 20:10:05 by bwilson           #+#    #+#             */
-/*   Updated: 2026/01/05 16:47:56 by bwilson          ###   ########.fr       */
+/*   Updated: 2026/01/06 17:57:06 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include "../../rank00/libft/libft.h"
+#include <stdlib.h>
 char *get_next_line(int fd);
 #endif
