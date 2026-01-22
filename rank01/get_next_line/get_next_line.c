@@ -6,7 +6,7 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 20:09:38 by bwilson           #+#    #+#             */
-/*   Updated: 2026/01/08 16:57:43 by bwilson          ###   ########.fr       */
+/*   Updated: 2026/01/08 21:57:54 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,31 +84,30 @@ size_t	ft_strlen(const char *x)
 
 char	*get_next_line(int fd)
 {
-	char		*buffer;
+	char		*buf;
 	static char	*stash;
 	char		*line;
 	int			bytes_read;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || !(buffer = malloc((size_t)BUFFER_SIZE
-				+ 1)))
+	if (fd >= 0 && BUFFER_SIZE > 0)
+		buf = malloc((size_t)BUFFER_SIZE + 1);
+	if (fd < 0 || BUFFER_SIZE <= 0 || !buf)
 		return (NULL);
 	while (1)
 	{
 		if (contain_newline(stash))
 			return (line = extract_line(stash), stash = trim_stash(stash),
-				free(buffer), line);
-		bytes_read = read(fd, buffer, BUFFER_SIZE);
-		if (bytes_read > 0)
-			stash = grow_stash(stash, buffer, bytes_read);
+				free(buf), line);
+		bytes_read = read(fd, buf, BUFFER_SIZE);
 		if (bytes_read == 0)
 		{
-			free(buffer);
-			if (!stash || !*stash)
+			if (free(buf), !stash || !*stash)
 				return (free(stash), stash = NULL, NULL);
 			return (line = stash, stash = NULL, line);
 		}
-		if (bytes_read == -1 || !stash)
-			return (free(buffer), free(stash), stash = NULL, NULL);
+		stash = grow_stash(stash, buf, bytes_read);
+		if (!stash)
+			return (free(buf), free(stash), stash = NULL, NULL);
 	}
 }
 

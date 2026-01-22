@@ -6,7 +6,7 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 20:10:02 by bwilson           #+#    #+#             */
-/*   Updated: 2026/01/08 14:58:57 by bwilson          ###   ########.fr       */
+/*   Updated: 2026/01/08 22:05:33 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,8 @@ int	contain_newline(char *stash)
 	if (!stash)
 		return (0);
 	while (stash[i])
-	{
-		if (stash[i] == '\n')
+		if (stash[i++] == '\n')
 			return (1);
-		i++;
-	}
 	return (0);
 }
 
@@ -77,6 +74,8 @@ char	*grow_stash(char *old_stash, char *buffer, int bytes_read)
 	size_t	old_stash_len;
 	size_t	j;
 
+	if (bytes_read < 1)
+		return (NULL);
 	old_stash_len = ft_strlen(old_stash);
 	growed_stash = malloc(old_stash_len + bytes_read + 1);
 	if (!growed_stash)
@@ -126,8 +125,12 @@ char	*trim_stash(char *stash)
 		if (stash[i] == '\n')
 		{
 			new_stash = ft_substr(stash, i + 1, stash_len);
-			if (new_stash != NULL)
-				free(stash);
+			free(stash);
+			if (new_stash && *new_stash == '\0')
+			{
+				free(new_stash);
+				return (NULL);
+			}
 			return (new_stash);
 		}
 		i++;
