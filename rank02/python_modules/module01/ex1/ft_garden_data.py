@@ -1,8 +1,9 @@
 class Plant:
-    def __init__(self, name, height, age):
+    def __init__(self: "Plant", name: str, height: int, age: int) -> None:
         self.name = name
         self.height = height
         self.age = age
+
 
 p0 = Plant("Kaktus", 10, 360)
 p1 = Plant("Palme", 187, 420)

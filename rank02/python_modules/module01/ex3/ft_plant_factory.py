@@ -6,7 +6,11 @@ p2 = Plant("Cactus", 5, 90)
 p3 = Plant("Sunflower", 80, 45)
 p4 = Plant("Fern", 15, 120)
 i = 0
-plants = [p0,p1,p2,p3,p4]
+plants = [p0,
+          p1,
+          p2,
+          p3,
+          p4]
 if __name__ == "__main__":
     print("=== Plant Factory Output ===")
     for plant in plants:
