@@ -26,11 +26,12 @@ class GardenManager:
             self.amount_plants = amount_plants
             self.growth_plants = growth_plants
             self.gardens_managed = gardens_managed
-        
+
         @staticmethod
-        def owner_report(owner: str, plant: object) -> None:
-            print(f"=== {owner}'s Garden Report")
-            print("Plants in garden:")
+        def owner_report(owner: str, plant: object, first_call: bool) -> None:
+            if first_call:
+                print(f"=== {owner}'s Garden Report")
+                print("Plants in garden:")
 
             # color, prize flower, blooming
             if (plant.color != ""
@@ -91,6 +92,14 @@ class GardenManager:
                     and not plant.blooming):
                 print(f"- {plant.name}: "
                       f"{plant.height}cm")
+
+        @staticmethod
+        def print_owner_report(list_of_plants: list, owner: str) -> None:
+            first_call = True
+            fn = GardenManager.GardenStats
+            for plant in list_of_plants:
+                fn.owner_report(owner, plant, first_call)
+                first_call = False
 
 
 class FloweringPlant(Plant):
@@ -162,8 +171,9 @@ if __name__ == "__main__":
                      prize_points=10)
     list_of_plants = [p0, p1, p2]
     FloweringPlant.print_flowering(list_of_plants)
-    for plant in list_of_plants:
-        GardenManager.GardenStats.owner_report(g0.garden_name, plant)
+
+    GardenManager.GardenStats.print_owner_report(list_of_plants,
+                                                 g0.garden_name)
     # g1 = GardenManager("Alice")
     # g1_stats = g1.GardenStats(22)
     # p1 = GardenManager.FloweringPlant("Rose", 30, 12)
