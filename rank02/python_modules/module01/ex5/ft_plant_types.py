@@ -66,7 +66,7 @@ if __name__ == "__main__":
     def print_tree(name: str, height: int, age: int, diameter: int) -> None:
         print(f"{name} (Tree): {height}cm, "
               f"{age} days, {diameter}cm diameter")
-        
+
     def print_veg(name: str, height: int, age: int, season: str,
                   prov: str) -> None:
         print(f"{name} (Vegetable): {height}cm, "
