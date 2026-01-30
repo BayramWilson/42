@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_numbers.c                                      :+:      :+:    :+:   */
+/*   pf_put_numbers.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,19 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	write_integer(int i)
+int	pf_write_integer(int i)
 {
-	return (pf_putnbr(i));
+	int	fd;
+
+	fd = 1;
+	return (pf_putnbr_fd(i, fd));
 }
 
-int	write_unsigned_integer(unsigned int i)
+int	pf_write_unsigned_integer(unsigned int i)
 {
-	return (pf_putnbr(i));
+	int	fd;
+
+	fd = 1;
+	return (pf_putnbr_fd(i, fd));
 }
 
-int	pf_putnbr(long n)
+int	pf_putnbr_fd(long n, int fd)
 {
 	long	nbl;
 	char	s[12];
@@ -33,10 +39,10 @@ int	pf_putnbr(long n)
 	i = 0;
 	len = 0;
 	if (0 == nbl)
-		return ((int)write(1, "0", 1));
+		return ((int)write(fd, "0", 1));
 	if (nbl < 0)
 	{
-		len = len + (int)write(1, "-", 1);
+		len = len + (int)write(fd, "-", 1);
 		nbl = -nbl;
 	}
 	while (nbl > 0)
@@ -45,6 +51,6 @@ int	pf_putnbr(long n)
 		nbl = nbl / 10;
 	}
 	while (i > 0)
-		len = len + (int)write(1, &s[--i], 1);
+		len = len + (int)write(fd, &s[--i], 1);
 	return (len);
 }

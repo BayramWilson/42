@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_strings.c                                      :+:      :+:    :+:   */
+/*   pf_put_strings.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	write_char(char c)
+int	pf_write_char(char c)
 {
 	return ((int)write(1, &c, 1));
 }
 
-int	write_string(char *s)
+int	pf_write_string(char *s)
 {
 	int	i;
 
@@ -32,14 +32,14 @@ int	write_string(char *s)
 	return (i);
 }
 
-int	put_ptr(void *ptr)
+int	pf_put_ptr(void *ptr)
 {
-	int		i;
+	int	i;
 
 	if (!ptr)
 		return ((int)write(1, "(nil)", 5));
 	i = 0;
 	i = i + (int)write(1, "0x", 2);
-	i = i + put_hex_ull((unsigned long long)(uintptr_t)ptr);
+	i = i + pf_put_hex_ull((unsigned long long)(uintptr_t)ptr);
 	return (i);
 }

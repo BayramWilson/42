@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push.c                                          :+:      :+:    :+:   */
+/*   handle_error.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/19 14:59:46 by bwilson           #+#    #+#             */
-/*   Updated: 2026/01/19 16:42:46 by bwilson          ###   ########.fr       */
+/*   Created: 2026/01/25 18:19:15 by bwilson           #+#    #+#             */
+/*   Updated: 2026/01/26 14:52:56 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../push_swap.h"
 
-void    ft_push(t_list **from, t_list **to)
+int	parse_error(t_stack **a, char **tokens)
 {
-    t_list *tmp;
-    
-    if (!from || !*from)
-        return;
-    tmp = *from;
-    *from = tmp->next;
-    tmp->next = *to;
-    *to = tmp; 
+	if (tokens)
+		free_inputs(tokens);
+	free_t_stack(a);
+	write(2, "Error\n", 6);
+	return (0);
 }

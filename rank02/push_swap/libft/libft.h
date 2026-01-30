@@ -6,14 +6,16 @@
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 14:00:00 by bwilson           #+#    #+#             */
-/*   Updated: 2026/01/19 16:44:53 by bwilson          ###   ########.fr       */
+/*   Updated: 2026/01/25 18:18:28 by bwilson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdarg.h>
 # include <stddef.h>
+# include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -21,7 +23,6 @@
 typedef struct s_list
 {
 	void			*content;
-	int 			value;
 	struct s_list	*next;
 }					t_list;
 
@@ -44,7 +45,7 @@ size_t				ft_strlen(const char *x);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
-char				*ft_strnstr(const char *haystack, const char *needle,
+char				*ft_strnstr(const char *hayt_stack, const char *needle,
 						size_t len);
 size_t				ft_strlcpy(char *dest, const char *src, size_t size);
 size_t				ft_strlcat(char *dest, const char *src, size_t n);
@@ -75,14 +76,26 @@ char				*ft_itoa(int n);
 
 /* List Conversion */
 t_list				*ft_lstnew(void *content);
-void				ft_lstadd_front(t_list **lst, t_list *new);
+void				ft_lstadd_front(t_list **lst, t_list *new_node);
 int					ft_lstsize(t_list *lst);
 t_list				*ft_lstlast(t_list *lst);
-void				ft_lstadd_back(t_list **lst, t_list *new);
+void				ft_lstadd_back(t_list **lst, t_list *new_node);
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+
+/* ft_printf */
+int					ft_printf(const char *s, ...);
+int					pf_put_hex(unsigned int n);
+int					pf_put_hex_upper(unsigned int n);
+int					pf_put_hex_ull(unsigned long long n);
+int					pf_putnbr_fd(long n, int fd);
+int					pf_write_string(char *s);
+int					pf_write_char(char c);
+int					pf_write_integer(int i);
+int					pf_write_unsigned_integer(unsigned int i);
+int					pf_put_ptr(void *ptr);
 
 #endif

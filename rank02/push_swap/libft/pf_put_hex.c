@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_hex.c                                          :+:      :+:    :+:   */
+/*   pf_put_hex.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,40 +10,40 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	put_hex(unsigned int n)
+int	pf_put_hex(unsigned int n)
 {
 	const char	*base = "0123456789abcdef";
 	int			i;
 
 	i = 0;
 	if (n >= 16)
-		i = i + put_hex(n / 16);
-	i = i + write_char(base[n % 16]);
+		i = i + pf_put_hex(n / 16);
+	i = i + pf_write_char(base[n % 16]);
 	return (i);
 }
 
-int	put_hex_upper(unsigned int n)
+int	pf_put_hex_upper(unsigned int n)
 {
 	const char	*base = "0123456789ABCDEF";
 	int			i;
 
 	i = 0;
 	if (n >= 16)
-		i = i + put_hex_upper(n / 16);
-	i = i + write_char(base[n % 16]);
+		i = i + pf_put_hex_upper(n / 16);
+	i = i + pf_write_char(base[n % 16]);
 	return (i);
 }
 
-int	put_hex_ull(unsigned long long n)
+int	pf_put_hex_ull(unsigned long long n)
 {
 	const char	*base = "0123456789abcdef";
 	int			i;
 
 	i = 0;
 	if (n >= 16)
-		i = i + put_hex_ull(n / 16);
-	i = i + write_char(base[n % 16]);
+		i = i + pf_put_hex_ull(n / 16);
+	i = i + pf_write_char(base[n % 16]);
 	return (i);
 }
