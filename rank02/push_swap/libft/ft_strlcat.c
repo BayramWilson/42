@@ -1,0 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bwilson <bwilson@student.42berlin.de>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/03 14:35:12 by bwilson           #+#    #+#             */
+/*   Updated: 2025/12/09 17:28:15 by bwilson          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+size_t	ft_strlcat(char *dest, const char *src, size_t n)
+{
+	size_t	i;
+	size_t	j;
+	size_t	ldest;
+	size_t	lsrc;
+
+	ldest = ft_strlen(dest);
+	lsrc = ft_strlen(src);
+	i = ldest;
+	j = 0;
+	if (n <= ldest)
+		return (n + lsrc);
+	while (i < n - 1 && src[j])
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (ldest + lsrc);
+}
