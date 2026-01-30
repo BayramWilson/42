@@ -137,10 +137,15 @@ class GardenManager:
                   f"{flowering_sum} flowering, "
                   f"{prize_flower_sum} prize flowers")
             if (GardenManager.GardenStats.height_validation(list_of_plants)):
-                print("Height validaton test: True")
+                print("\nHeight validaton test: True")
             else:
-                print("Height validaton test: False")
+                print("\nHeight validaton test: False")
+            print(f"Garden scores - {g0.garden_name}: "
+                  f"{fn.garden_score_calculator(list_of_plants)}"
+                  f", {g1.garden_name}: "
+                  f"{fn.garden_score_calculator(list_of_plants1)}")
 
+        @staticmethod
         def height_validation(list_of_plants: list) -> bool:
             false_counter = 0
             for plant in list_of_plants:
@@ -150,6 +155,14 @@ class GardenManager:
                 return False
             else:
                 return True
+
+        def garden_score_calculator(list_of_plants: list) -> int:
+            score = 0
+            for plant in list_of_plants:
+                if (isinstance(plant, PrizeFlower)):
+                    score += 50
+                    score += plant.height / 10
+            return round(score)
 
 
 class FloweringPlant(Plant):
@@ -221,12 +234,40 @@ if __name__ == "__main__":
                      blooming=True,
                      garden=g0,
                      prize_points=10)
+
+    g1 = GardenManager("Bob")
+    p3 = FloweringPlant(name="Rose",
+                        height=22,
+                        age=13,
+                        color="red flowers",
+                        blooming=True,
+                        garden=g1)
+    p4 = FloweringPlant(name="Oak Tree",
+                        height=-187,
+                        age=1337,
+                        color="",
+                        blooming=False,
+                        garden=g1)
+    p5 = PrizeFlower(name="Sunflower",
+                     height=90,
+                     age=33,
+                     color="yellow flowers",
+                     blooming=True,
+                     garden=g1,
+                     prize_points=10)
+
+    list_of_gardens = [g0, g1]
     list_of_plants = [p0, p1, p2]
+    list_of_plants1 = [p3, p4, p5]
     total_growth = 0
     total_growth = FloweringPlant.print_flowering(list_of_plants, total_growth)
     total_growth = FloweringPlant.print_flowering(list_of_plants, total_growth)
     GardenManager.GardenStats.print_owner_report(list_of_plants,
                                                  g0.garden_name, total_growth)
+    total_gardens = 0
+    for i in list_of_gardens:
+        total_gardens += 1
+    print(f"Total gardens managed {total_gardens}")
     # g1 = GardenManager("Alice")
     # g1_stats = g1.GardenStats(22)
     # p1 = GardenManager.FloweringPlant("Rose", 30, 12)
