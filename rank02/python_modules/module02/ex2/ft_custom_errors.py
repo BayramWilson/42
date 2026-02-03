@@ -3,27 +3,27 @@ class GardenError(Exception):
     Mother object for all garden related errors.
     A basic error for garden problems
     """
-    def __init__(self: "GardenError", message: str):
+    def __init__(self: "GardenError", message: str) -> None:
         self.message = message
         super().__init__(self.message)
 
-    def __str__(self):
+    def __str__(self: "GardenError") -> str:
         return f"{self.message}"
 
 
 class PlantError(GardenError):
     """ For problems with plants"""
-    def __init__(self: "PlantError", message: str):
+    def __init__(self: "PlantError", message: str) -> None:
         self.message = message
         super().__init__(self.message)
 
-    def __str__(self):
+    def __str__(self: "PlantError") -> str:
         return f"{self.message}"
 
 
 class WaterError(GardenError):
     """Use if the days of watering is below 2"""
-    def __init__(self, message: str):
+    def __init__(self: "WaterError", message: str) -> None:
         self.message = message
         super().__init__(self.message)
 
@@ -33,12 +33,12 @@ def process_water_item(item: int) -> None:
         raise WaterError("Shouldnt be nagative")
 
 
-def process_plant_item(item: str):
+def process_plant_item(item: str) -> None:
     if (item == ""):
         raise PlantError("name is empty")
 
 
-def process_garden_error(item: str):
+def process_garden_error(item: str) -> None:
     if (item == "garden" or item == "Garden"):
         raise GardenError("Garden or garden is an invalid name")
 

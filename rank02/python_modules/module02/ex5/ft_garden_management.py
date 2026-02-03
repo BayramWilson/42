@@ -1,9 +1,9 @@
 from ex2.ft_custom_errors import (PlantError, WaterError)
 
 
-class Gardenmanager:
+class GardenManager:
     class Plant():
-        def __init__(self,
+        def __init__(self: "GardenManager.Plant",
                      name: str,
                      height: int,
                      age: int,
@@ -11,7 +11,7 @@ class Gardenmanager:
                      sun_level: int,
                      health: str,
                      color: str
-                     ):
+                     ) -> None:
             self.name = name
             self.height = height
             self.age = age
@@ -21,7 +21,7 @@ class Gardenmanager:
             self.color = color
 
         @classmethod
-        def create_plant(cls,
+        def create_plant(cls: type["GardenManager.Plant"],
                          name: str,
                          heigth: int,
                          age: int,
@@ -29,7 +29,7 @@ class Gardenmanager:
                          sun_level: int,
                          health: str,
                          color: str
-                         ) -> "Gardenmanager.Plant":
+                         ) -> "GardenManager.Plant":
             if (name == ""):
                 raise PlantError("Plant name empty")
             if not (isinstance(name, str)):
@@ -58,7 +58,7 @@ class Gardenmanager:
 
 if __name__ == "__main__":
     plant_list = []
-    plant = Gardenmanager.Plant
+    plant = GardenManager.Plant
     print("Adding Plants to garden...")
     try:
         # could have done a try for each plant creation
