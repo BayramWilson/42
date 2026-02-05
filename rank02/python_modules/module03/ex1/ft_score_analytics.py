@@ -106,3 +106,5 @@ if __name__ == "__main__":
         print(f"Score range: {high_score - lowest_score}")
     except NameError:
         pass
+    except TypeError:
+        pass
