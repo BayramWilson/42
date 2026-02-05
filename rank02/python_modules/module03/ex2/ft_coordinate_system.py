@@ -22,13 +22,16 @@ def calculat_distance(coordinate1: tuple,
     except TypeError as e:
         print(e)
 
+def parse_arguments(coordinate: tuple)
 
 class CoordinateError(Exception):
-    pass
+    def __init__(self, message: "str"):
+        super().__init__(message)
+        self.message = message
 
 
 if __name__ == "__main__":
-    print("=== Game Coordinate System ===")
+    print("=== Game Coordinate System ===\n")
     try:
         argc = len(sys.argv)
         if (argc < 7):
@@ -38,8 +41,7 @@ if __name__ == "__main__":
 
         pos = (sys.argv[1], sys.argv[2], sys.argv[3])
         pos1 = (sys.argv[4], sys.argv[5], sys.argv[6])
-
-        print(f"position created {pos}")
+        print(f"position created: ({pos[0]}, {pos[1]}, {pos[2]})")
         dist = calculat_distance(pos, pos1)
         dist = round(dist, 2)
         print(f"distance between {pos} and {pos1}: {dist}")
