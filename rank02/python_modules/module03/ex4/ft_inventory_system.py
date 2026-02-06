@@ -7,7 +7,7 @@ def parse_items() -> dict:
         inventory += [sys.argv[i]]
     temp = ""
     amount = ""
-    dict = {}
+    inventory_dict = {}
     # counter = 0
     for i in range(len(inventory)):
         for c in inventory[i]:
@@ -18,13 +18,23 @@ def parse_items() -> dict:
             temp += c
         after_column = len(amount) - len(temp) - 1
         amount = amount[-after_column:]
-        dict[temp] = int(amount)
+        inventory_dict[temp] = int(amount)
         temp = ""
         amount = ""
-    return dict
+    return inventory_dict
+
+
+def sum_dict_values(inventory: dict) -> int:
+    sum = inventory.values()
+    result = 0
+    for i in sum:
+        result += i
+    return result
 
 
 if __name__ == "__main__":
     print("=== Inventory System Analysis ===")
     inventory = parse_items()
     print(inventory)
+    sum_values = sum_dict_values(inventory)
+    print(sum_values)
