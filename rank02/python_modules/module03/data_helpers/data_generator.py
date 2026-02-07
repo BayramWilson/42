@@ -161,7 +161,8 @@ class PixelDataGenerator:
                 'id': event_id,
                 'player': random.choice(self.players),
                 'event_type': random.choice(event_types),
-                'timestamp': f"2024-01-{random.randint(1, 30):02d}T{random.randint(0, 23):02d}:{random.randint(0, 59):02d}",
+                'timestamp': f"2024-01-{random.randint(1, 30):02d}T"
+                f"{random.randint(0, 23):02d}:{random.randint(0, 59):02d}",
                 'data': {
                     'level': random.randint(1, 50),
                     'score_delta': random.randint(-100, 500),
